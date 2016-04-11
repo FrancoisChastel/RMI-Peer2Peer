@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="messages" maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Peer.UI.messagesController">
+    <children>
+        <SplitPane dividerPositions="0.8" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="1278.0">
+                    <children>
+                        <ListView fx:id="listeMessages" layoutX="0" layoutY="26.0" prefHeight="1000.0" prefWidth="1280.0" />
+                    </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                        <TextField fx:id="destinataire" layoutX="38.0" layoutY="24.0" prefHeight="27.0" prefWidth="1011.0" />
+                        <TextField fx:id="messageContent" layoutX="38.0" layoutY="59.0" prefHeight="55.0" prefWidth="1011.0" />
+                        <Button layoutX="1072.0" layoutY="18.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="39.0" prefWidth="157.0" text="Send message" />
+                        <Button layoutX="1072.0" layoutY="70.0" mnemonicParsing="false" onAction="#refreshMessage" prefHeight="39.0" prefWidth="157.0" text="Refresh" />
+                    </children></AnchorPane>
+            </items>
+        </SplitPane>
+        <MenuBar StackPane.alignment="TOP_CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Messenger">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveHistory" text="Save history" />
+                        <MenuItem mnemonicParsing="false" onAction="#loadHistory" text="Load history" />
+                        <MenuItem mnemonicParsing="false" onAction="#recoverHistory" text="Recover history" />
+                        <MenuItem mnemonicParsing="false" onAction="#clearHistory" text="Clear history" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Login">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#retourAccueil" text="Go to login" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</StackPane>
